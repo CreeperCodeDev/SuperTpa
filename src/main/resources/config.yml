@@ -1,0 +1,4 @@
+# SuperTpa 配置文件
+# 這裡可以添加一些配置選項
+
+tpa-request-expiry: 30 # 設置傳送請求過期時間（秒）
