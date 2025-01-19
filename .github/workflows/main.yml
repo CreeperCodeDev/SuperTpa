@@ -3,37 +3,38 @@ name: Build Minecraft Java Edition with Maven
 on:
   push:
     branches:
-      - main  # 當推送到 main 分支時觸發
+      - main
   pull_request:
     branches:
-      - main  # 當對 main 分支提出拉取請求時觸發
+      - main
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # 選擇運行 Ubuntu 的虛擬機器
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2  # 檢出代碼到工作環境
 
     - name: Set up JDK 17
-      uses: actions/setup-java@v2  # 設置 JDK 版本
+      uses: actions/setup-java@v2
       with:
-        java-version: '17'  # 設置 Java 版本為 17
+        java-version: '17'       # 指定 Java 版本
+        distribution: 'temurin'  # 指定 Java 分發版本（例如 temurin）
 
     - name: Cache Maven dependencies
-      uses: actions/cache@v2  # 快取 Maven 依賴，以加速後續構建
+      uses: actions/cache@v2
       with:
-        path: ~/.m2/repository  # 設置 Maven 本地倉庫的快取位置
-        key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}  # 設定快取鍵，當 pom.xml 更改時，會更新快取
+        path: ~/.m2/repository
+        key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
         restore-keys: |
           ${{ runner.os }}-maven-
 
     - name: Build with Maven
-      run: mvn clean install  # 使用 Maven 執行清理並構建專案
+      run: mvn clean install
 
     - name: Upload build artifacts
-      uses: actions/upload-artifact@v3  # 升級到最新版本 v3
+      uses: actions/upload-artifact@v3
       with:
         name: minecraft-build
         path: target/*.jar  # 假設構建的 JAR 文件位於 target 目錄下
