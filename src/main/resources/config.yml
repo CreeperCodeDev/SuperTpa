@@ -1,4 +1,10 @@
-# SuperTpa 配置文件
-# 這裡可以添加一些配置選項
-
-tpa-request-expiry: 30 # 設置傳送請求過期時間（秒）
+messages:
+  tpa-request-sent: "傳送請求已發送給 %target%。"
+  tpa-request-received: "%player% 想要傳送到你的位置。點擊此處接受傳送：/tpaccept 或拒絕：/tpdeny"
+  tpa-request-invalid-player: "找不到該玩家或該玩家未上線。"
+  tpa-request-accepted: "你已接受來自 %requester% 的傳送請求。"
+  tpa-request-denied: "你已拒絕來自 %requester% 的傳送請求。"
+  tpa-no-pending-request: "你目前沒有等待處理的傳送請求。"
+  tphere-success: "你已經將 %target% 傳送到你的所在地。"
+  tphere-fail: "找不到該玩家或該玩家未上線。"
+  only-players: "只有玩家能使用這個命令。"
