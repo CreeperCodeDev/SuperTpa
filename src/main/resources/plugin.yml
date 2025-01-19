@@ -4,8 +4,8 @@ main: creeperdev.superTpa.SuperTpa
 api-version: '1.20'
 commands:
   tpa:
-    description: 發送傳送請求
-    usage: /<command> <player>
+    description: 發送傳送請求給其他玩家
+    usage: /<command> <玩家>
   tpaccept:
     description: 接受傳送請求
     usage: /<command>
@@ -13,5 +13,5 @@ commands:
     description: 拒絕傳送請求
     usage: /<command>
   tphere:
-    description: 將指定玩家傳送到你的位置
-    usage: /<command> <player>
+    description: 請求將其他玩家傳送到你的位置
+    usage: /<command> <玩家>
