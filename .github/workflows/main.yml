@@ -33,7 +33,7 @@ jobs:
       run: mvn clean install  # 使用 Maven 執行清理並構建專案
 
     - name: Upload build artifacts
-      uses: actions/upload-artifact@v2  # 如果需要，可以上傳構建產物
+      uses: actions/upload-artifact@v3  # 升級到最新版本 v3
       with:
         name: minecraft-build
         path: target/*.jar  # 假設構建的 JAR 文件位於 target 目錄下
