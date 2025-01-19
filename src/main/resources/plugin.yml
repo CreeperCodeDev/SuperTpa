@@ -1,0 +1,17 @@
+name: SuperTpa
+version: '1.0-SNAPSHOT'
+main: creeperdev.superTpa.SuperTpa
+api-version: '1.20'
+commands:
+  tpa:
+    description: 發送傳送請求
+    usage: /<command> <player>
+  tpaccept:
+    description: 接受傳送請求
+    usage: /<command>
+  tpdeny:
+    description: 拒絕傳送請求
+    usage: /<command>
+  tphere:
+    description: 將指定玩家傳送到你的位置
+    usage: /<command> <player>
